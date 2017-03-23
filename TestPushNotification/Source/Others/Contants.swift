@@ -8,3 +8,4 @@
 
 let kDetail = "detail"
 let kAppBagde = "appBadge"
+let kurl = "https://www.reddit.com/new/.json"
