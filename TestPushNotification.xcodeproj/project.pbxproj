@@ -161,8 +161,7 @@
 				6520F9871E82E52C0027AB46 /* Main.storyboard */,
 				6520F98C1E82E52C0027AB46 /* LaunchScreen.storyboard */,
 			);
-			name = View;
-			path = Model;
+			path = View;
 			sourceTree = "<group>";
 		};
 		8E0AC0BC1E8467990051A696 /* Controllers */ = {
