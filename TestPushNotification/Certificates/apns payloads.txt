@@ -1,0 +1,25 @@
+*** Normal Payload ***
+
+{
+	"aps": {
+		"alert":"Testing.. (8)",
+		"badge":1,
+		"sound":"default"
+	},
+	"data": {
+		"VC":"ViewController.swift",
+		"Best": "Swift"
+	}
+}
+
+*** Silent Payload ***
+
+{
+	"aps": {
+		"content-available" : 1
+	},
+	"data": {
+		"VC":"ViewController.swift",
+		"Best": "Swift"
+	}
+}

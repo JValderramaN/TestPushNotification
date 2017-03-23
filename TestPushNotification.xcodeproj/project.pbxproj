@@ -12,6 +12,14 @@
 		6520F9891E82E52C0027AB46 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6520F9871E82E52C0027AB46 /* Main.storyboard */; };
 		6520F98B1E82E52C0027AB46 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6520F98A1E82E52C0027AB46 /* Assets.xcassets */; };
 		6520F98E1E82E52C0027AB46 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6520F98C1E82E52C0027AB46 /* LaunchScreen.storyboard */; };
+		653BB5A51E840C7C00548CA0 /* certificates_info in Resources */ = {isa = PBXBuildFile; fileRef = 653BB5A41E840C7C00548CA0 /* certificates_info */; };
+		653BB5AB1E840CB200548CA0 /* ios_development.cer in Resources */ = {isa = PBXBuildFile; fileRef = 653BB5A61E840CB200548CA0 /* ios_development.cer */; };
+		653BB5AC1E840CB200548CA0 /* aps_development.cer in Resources */ = {isa = PBXBuildFile; fileRef = 653BB5A71E840CB200548CA0 /* aps_development.cer */; };
+		653BB5AD1E840CB200548CA0 /* CertificateSigningRequest.certSigningRequest in Resources */ = {isa = PBXBuildFile; fileRef = 653BB5A81E840CB200548CA0 /* CertificateSigningRequest.certSigningRequest */; };
+		653BB5AE1E840CB200548CA0 /* TestPushNotification_provisioning_Dev.mobileprovision in Resources */ = {isa = PBXBuildFile; fileRef = 653BB5A91E840CB200548CA0 /* TestPushNotification_provisioning_Dev.mobileprovision */; };
+		653BB5AF1E840CB200548CA0 /* aps_development.p12 in Resources */ = {isa = PBXBuildFile; fileRef = 653BB5AA1E840CB200548CA0 /* aps_development.p12 */; };
+		653BB5B11E8413FA00548CA0 /* Pusher.app in Resources */ = {isa = PBXBuildFile; fileRef = 653BB5B01E8413FA00548CA0 /* Pusher.app */; };
+		653BB5B31E84149A00548CA0 /* apns payloads.txt in Resources */ = {isa = PBXBuildFile; fileRef = 653BB5B21E84149A00548CA0 /* apns payloads.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +30,15 @@
 		6520F98A1E82E52C0027AB46 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6520F98D1E82E52C0027AB46 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6520F98F1E82E52C0027AB46 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		653BB5A21E840AB800548CA0 /* TestPushNotification.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TestPushNotification.entitlements; sourceTree = "<group>"; };
+		653BB5A41E840C7C00548CA0 /* certificates_info */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = certificates_info; sourceTree = "<group>"; };
+		653BB5A61E840CB200548CA0 /* ios_development.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = ios_development.cer; sourceTree = "<group>"; };
+		653BB5A71E840CB200548CA0 /* aps_development.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = aps_development.cer; sourceTree = "<group>"; };
+		653BB5A81E840CB200548CA0 /* CertificateSigningRequest.certSigningRequest */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CertificateSigningRequest.certSigningRequest; sourceTree = "<group>"; };
+		653BB5A91E840CB200548CA0 /* TestPushNotification_provisioning_Dev.mobileprovision */ = {isa = PBXFileReference; lastKnownFileType = file; path = TestPushNotification_provisioning_Dev.mobileprovision; sourceTree = "<group>"; };
+		653BB5AA1E840CB200548CA0 /* aps_development.p12 */ = {isa = PBXFileReference; lastKnownFileType = file; path = aps_development.p12; sourceTree = "<group>"; };
+		653BB5B01E8413FA00548CA0 /* Pusher.app */ = {isa = PBXFileReference; lastKnownFileType = wrapper.application; path = Pusher.app; sourceTree = "<group>"; };
+		653BB5B21E84149A00548CA0 /* apns payloads.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "apns payloads.txt"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +71,8 @@
 		6520F9821E82E52C0027AB46 /* TestPushNotification */ = {
 			isa = PBXGroup;
 			children = (
+				653BB5A31E840BC400548CA0 /* Certificates */,
+				653BB5A21E840AB800548CA0 /* TestPushNotification.entitlements */,
 				6520F9831E82E52C0027AB46 /* AppDelegate.swift */,
 				6520F9851E82E52C0027AB46 /* ViewController.swift */,
 				6520F9871E82E52C0027AB46 /* Main.storyboard */,
@@ -62,6 +81,21 @@
 				6520F98F1E82E52C0027AB46 /* Info.plist */,
 			);
 			path = TestPushNotification;
+			sourceTree = "<group>";
+		};
+		653BB5A31E840BC400548CA0 /* Certificates */ = {
+			isa = PBXGroup;
+			children = (
+				653BB5B21E84149A00548CA0 /* apns payloads.txt */,
+				653BB5B01E8413FA00548CA0 /* Pusher.app */,
+				653BB5A61E840CB200548CA0 /* ios_development.cer */,
+				653BB5A71E840CB200548CA0 /* aps_development.cer */,
+				653BB5A81E840CB200548CA0 /* CertificateSigningRequest.certSigningRequest */,
+				653BB5A91E840CB200548CA0 /* TestPushNotification_provisioning_Dev.mobileprovision */,
+				653BB5AA1E840CB200548CA0 /* aps_development.p12 */,
+				653BB5A41E840C7C00548CA0 /* certificates_info */,
+			);
+			path = Certificates;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -96,8 +130,16 @@
 				TargetAttributes = {
 					6520F97F1E82E52C0027AB46 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 67SU8X3F5N;
+						DevelopmentTeam = 67P4A8SJ5P;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -126,7 +168,15 @@
 			files = (
 				6520F98E1E82E52C0027AB46 /* LaunchScreen.storyboard in Resources */,
 				6520F98B1E82E52C0027AB46 /* Assets.xcassets in Resources */,
+				653BB5AF1E840CB200548CA0 /* aps_development.p12 in Resources */,
+				653BB5B31E84149A00548CA0 /* apns payloads.txt in Resources */,
+				653BB5AB1E840CB200548CA0 /* ios_development.cer in Resources */,
+				653BB5A51E840C7C00548CA0 /* certificates_info in Resources */,
+				653BB5AD1E840CB200548CA0 /* CertificateSigningRequest.certSigningRequest in Resources */,
+				653BB5B11E8413FA00548CA0 /* Pusher.app in Resources */,
 				6520F9891E82E52C0027AB46 /* Main.storyboard in Resources */,
+				653BB5AC1E840CB200548CA0 /* aps_development.cer in Resources */,
+				653BB5AE1E840CB200548CA0 /* TestPushNotification_provisioning_Dev.mobileprovision in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,11 +311,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 67SU8X3F5N;
+				CODE_SIGN_ENTITLEMENTS = TestPushNotification/TestPushNotification.entitlements;
+				DEVELOPMENT_TEAM = 67P4A8SJ5P;
 				INFOPLIST_FILE = TestPushNotification/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.JoseValderrama.TestPushNotification;
+				PRODUCT_BUNDLE_IDENTIFIER = com.momentumlab.TestPushNotification;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -275,11 +326,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 67SU8X3F5N;
+				CODE_SIGN_ENTITLEMENTS = TestPushNotification/TestPushNotification.entitlements;
+				DEVELOPMENT_TEAM = 67P4A8SJ5P;
 				INFOPLIST_FILE = TestPushNotification/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.JoseValderrama.TestPushNotification;
+				PRODUCT_BUNDLE_IDENTIFIER = com.momentumlab.TestPushNotification;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -304,6 +356,7 @@
 				6520F9941E82E52C0027AB46 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
