@@ -10,16 +10,22 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var detailLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.getDetailFromUserDefaults), name: .onDidReceivedPushNotification, object: nil)
+        getDetailFromUserDefaults()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
-
-
+    
+    @objc fileprivate func getDetailFromUserDefaults(){
+        let defaults = UserDefaults.standard
+        detailLabel.text = defaults.string(forKey: kDetail) ?? "Empty Value"
+    }
 }
 

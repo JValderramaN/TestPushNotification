@@ -6,10 +6,9 @@
 		"badge":1,
 		"sound":"default"
 	},
-	"data": {
-		"VC":"ViewController.swift",
-		"Best": "Swift"
-	}
+    "data": {
+        "value": "Swift"
+    }
 }
 
 *** Silent Payload ***
@@ -19,7 +18,6 @@
 		"content-available" : 1
 	},
 	"data": {
-		"VC":"ViewController.swift",
-		"Best": "Swift"
+		"value": "Swift"
 	}
 }

@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ebU-OQ-1dR">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Detail" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ebU-OQ-1dR">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -26,10 +26,17 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ebU-OQ-1dR" secondAttribute="trailing" constant="10" id="738-Sv-vlZ"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" relation="greaterThanOrEqual" secondItem="ebU-OQ-1dR" secondAttribute="bottom" constant="10" id="Gzs-ca-rbE"/>
                             <constraint firstItem="ebU-OQ-1dR" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="SCN-Gm-hTH"/>
                             <constraint firstItem="ebU-OQ-1dR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TD0-pv-xad"/>
+                            <constraint firstItem="ebU-OQ-1dR" firstAttribute="top" relation="greaterThanOrEqual" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="cQI-Yu-NJl"/>
+                            <constraint firstItem="ebU-OQ-1dR" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="10" id="zhz-te-8YN"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="detailLabel" destination="ebU-OQ-1dR" id="dJn-iN-MDc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

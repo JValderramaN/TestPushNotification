@@ -20,6 +20,8 @@
 		653BB5AF1E840CB200548CA0 /* aps_development.p12 in Resources */ = {isa = PBXBuildFile; fileRef = 653BB5AA1E840CB200548CA0 /* aps_development.p12 */; };
 		653BB5B11E8413FA00548CA0 /* Pusher.app in Resources */ = {isa = PBXBuildFile; fileRef = 653BB5B01E8413FA00548CA0 /* Pusher.app */; };
 		653BB5B31E84149A00548CA0 /* apns payloads.txt in Resources */ = {isa = PBXBuildFile; fileRef = 653BB5B21E84149A00548CA0 /* apns payloads.txt */; };
+		653BB5B51E841DB300548CA0 /* Contants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653BB5B41E841DB300548CA0 /* Contants.swift */; };
+		653BB5B71E8421A500548CA0 /* NSNotification+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653BB5B61E8421A500548CA0 /* NSNotification+Additions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +41,8 @@
 		653BB5AA1E840CB200548CA0 /* aps_development.p12 */ = {isa = PBXFileReference; lastKnownFileType = file; path = aps_development.p12; sourceTree = "<group>"; };
 		653BB5B01E8413FA00548CA0 /* Pusher.app */ = {isa = PBXFileReference; lastKnownFileType = wrapper.application; path = Pusher.app; sourceTree = "<group>"; };
 		653BB5B21E84149A00548CA0 /* apns payloads.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "apns payloads.txt"; sourceTree = "<group>"; };
+		653BB5B41E841DB300548CA0 /* Contants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contants.swift; sourceTree = "<group>"; };
+		653BB5B61E8421A500548CA0 /* NSNotification+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSNotification+Additions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +83,8 @@
 				6520F98A1E82E52C0027AB46 /* Assets.xcassets */,
 				6520F98C1E82E52C0027AB46 /* LaunchScreen.storyboard */,
 				6520F98F1E82E52C0027AB46 /* Info.plist */,
+				653BB5B41E841DB300548CA0 /* Contants.swift */,
+				653BB5B61E8421A500548CA0 /* NSNotification+Additions.swift */,
 			);
 			path = TestPushNotification;
 			sourceTree = "<group>";
@@ -189,6 +195,8 @@
 			files = (
 				6520F9861E82E52C0027AB46 /* ViewController.swift in Sources */,
 				6520F9841E82E52C0027AB46 /* AppDelegate.swift in Sources */,
+				653BB5B51E841DB300548CA0 /* Contants.swift in Sources */,
+				653BB5B71E8421A500548CA0 /* NSNotification+Additions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

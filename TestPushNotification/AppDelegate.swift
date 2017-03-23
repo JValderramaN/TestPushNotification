@@ -59,6 +59,34 @@ extension AppDelegate{
     
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
         print("didReceiveRemoteNotification fetchCompletionHandler", userInfo)
+        manageAppBagde()
+        updateDetail(with: userInfo)
         completionHandler(UIBackgroundFetchResult.newData)
     }
+}
+
+func manageAppBagde(){    
+    let defaults = UserDefaults.standard
+    let newAppBagdeCount = defaults.integer(forKey: kAppBagde) + 1
+    defaults.set(newAppBagdeCount, forKey: kAppBagde)
+    defaults.synchronize()
+    UIApplication.shared.applicationIconBadgeNumber = newAppBagdeCount
+}
+
+func updateDetail(with userInfo: [AnyHashable : Any]){
+    let appState = UIApplication.shared.applicationState
+    
+    var additionalValue = ""
+    
+    if let data = userInfo["data"] as? [AnyHashable : Any], let value = data["value"] as? String{
+        additionalValue = "- Value in Payload: \(value)"
+    }
+    
+    let detailString = "App State: \(appState) \(additionalValue)"
+    
+    let defaults = UserDefaults.standard
+    defaults.set(detailString, forKey: kDetail)
+    defaults.synchronize()
+    
+    NotificationCenter.default.post(.init(name: .onDidReceivedPushNotification))
 }
