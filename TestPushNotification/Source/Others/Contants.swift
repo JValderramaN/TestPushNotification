@@ -8,4 +8,5 @@
 
 let kDetail = "detail"
 let kAppBagde = "appBadge"
-let kurl = "https://www.reddit.com/new/.json"
+let kUrl = "https://itunes.apple.com/us/rss/topfreeapplications/limit=20/json"
+let kAlamofire = "alamofire"

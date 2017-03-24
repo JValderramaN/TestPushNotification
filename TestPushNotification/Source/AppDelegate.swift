@@ -21,6 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         
         return true
     }
+    
 }
 
 // MARK: - Push Notifications
@@ -36,7 +37,6 @@ extension AppDelegate{
                     UIApplication.shared.registerForRemoteNotifications()
                 }
                 else{
-                    //Do stuff if unsuccessful...
                 }
             })
         }else{ //If user is not on iOS 10 use the old methods we've been using
@@ -63,6 +63,10 @@ extension AppDelegate{
         updateDetail(with: userInfo)
         completionHandler(UIBackgroundFetchResult.newData)
     }
+    
+    func application(_ application: UIApplication, handleEventsForBackgroundURLSession identifier: String,completionHandler: @escaping () -> Void) {
+        NetworkManager.shared.backgroundCompletionHandler = completionHandler
+    }
 }
 
 func manageAppBagde(){    
@@ -80,10 +84,12 @@ func updateDetail(with userInfo: [AnyHashable : Any]){
     
     if let data = userInfo["data"] as? [AnyHashable : Any], let value = data["value"] as? String{
         additionalValue = "- Value in Payload: \(value)"
+        if value == kAlamofire{
+            NetworkManager.shared.alamofireTest()
+        }
     }
     
     let detailString = "App State: \(appState) \(additionalValue)"
-    
     let defaults = UserDefaults.standard
     defaults.set(detailString, forKey: kDetail)
     defaults.synchronize()

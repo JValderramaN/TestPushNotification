@@ -10,33 +10,49 @@ import Foundation
 import Alamofire
 import Realm
 import RealmSwift
+import UserNotifications
 
-class NetworkManager {
+class NetworkManager{
     
-    var postList:[Post] = []
     static let shared: NetworkManager = NetworkManager()
+    private lazy var backgroundManager: SessionManager = Alamofire.SessionManager.default
+    
+    var backgroundCompletionHandler: (() -> Void)? {
+        get {
+            
+            return backgroundManager.backgroundCompletionHandler
+        }
+        set {
+            backgroundManager.backgroundCompletionHandler = newValue
+        }
+    }
     
     init(){
-        alamofireTest()
+        if let bundleIdentifier = Bundle.main.bundleIdentifier{
+            backgroundManager = Alamofire.SessionManager(session: URLSession(configuration: URLSessionConfiguration.background(withIdentifier: bundleIdentifier+".background")), delegate: Alamofire.SessionManager.default.delegate)!
+        } else {
+            backgroundManager = Alamofire.SessionManager.default
+        }
+        self.alamofireTest()
     }
     
-    func fecthData() -> [Post]{
-        return postList
-    }
      public func alamofireTest(){
-        Alamofire.request(kurl).responseArray(keyPath: "data.children"){ (response: DataResponse<[Post]>) in
-            let postArrays = response.result.value
+        backgroundManager.request(kUrl).responseObject(keyPath:"feed"){ (response: DataResponse<Apps>) in
+            let app = response.result.value
+            
             let realm = try! Realm()
-            if let postArrays = postArrays {
-                if postArrays.count > 0 {
+            let appState = UIApplication.shared.applicationState
+            
+            if let app = app {
                     try! realm.write {
                         realm.deleteAll()
-                        for post in postArrays {
-                            self.postList.append(post)
-                            realm.add(post)
-                        }
+                        realm.add(app)
+                        let defaults = UserDefaults.standard
+                        let detailString = "App State: \(appState) \(app.title)"
+                        defaults.set(detailString, forKey: kDetail)
+                        defaults.synchronize()
+                        NotificationCenter.default.post(.init(name: .onDidReceivedPushNotification))
                     }
-                }
             }
         }
     }

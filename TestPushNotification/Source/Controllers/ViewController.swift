@@ -14,7 +14,6 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         NotificationCenter.default.addObserver(self, selector: #selector(ViewController.getDetailFromUserDefaults), name: .onDidReceivedPushNotification, object: nil)
         getDetailFromUserDefaults()
     }

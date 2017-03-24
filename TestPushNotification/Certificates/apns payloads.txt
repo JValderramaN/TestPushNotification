@@ -7,17 +7,40 @@
 		"sound":"default"
 	},
     "data": {
-        "value": "Swift"
+        "value": "Swift-normal"
     }
 }
 
-*** Silent Payload ***
+*** Normal Payload with alamofire ***
+{
+	"aps": {
+		"alert":"Testing.. (8)",
+		"badge":1,
+		"sound":"default"
+	},
+    "data": {
+        "value": "alamofire"
+    }
+}
+
+*** Silent Payload  ***
 
 {
 	"aps": {
 		"content-available" : 1
 	},
 	"data": {
-		"value": "Swift"
+		"value": "Swift-silent"
+	}
+}
+
+*** Silent Payload with alamofire ***
+
+{
+	"aps": {
+		"content-available" : 1
+	},
+	"data": {
+		"value": "alamofire"
 	}
 }
