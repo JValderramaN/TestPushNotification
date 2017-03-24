@@ -11,24 +11,24 @@ import Alamofire
 import Realm
 import RealmSwift
 
-protocol NetworkManagerDelegate {
-    func responseData(with data:[Post])
-}
-
 class NetworkManager {
     
     var postList:[Post] = []
-    var delegate:NetworkManagerDelegate?
+    static let shared: NetworkManager = NetworkManager()
     
-    func fecthData(with delegate:NetworkManagerDelegate){
-        self.delegate = delegate
+    init(){
+        alamofireTest()
+    }
+    
+    func fecthData() -> [Post]{
+        return postList
     }
      public func alamofireTest(){
         Alamofire.request(kurl).responseArray(keyPath: "data.children"){ (response: DataResponse<[Post]>) in
             let postArrays = response.result.value
             let realm = try! Realm()
             if let postArrays = postArrays {
-                if postArrays.count > 0{
+                if postArrays.count > 0 {
                     try! realm.write {
                         realm.deleteAll()
                         for post in postArrays {
@@ -36,17 +36,8 @@ class NetworkManager {
                             realm.add(post)
                         }
                     }
-                } else{
-                    let post: Results<Post> = { realm.objects(Post.self) }()
-                    if post.count > 0 {
-                        for  PostItems in post {
-                            self.postList.append(PostItems)
-                        }
-                    }
                 }
             }
-            self.delegate?.responseData(with: self.postList)
-           
         }
     }
 }
