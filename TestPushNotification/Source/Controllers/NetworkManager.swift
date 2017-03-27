@@ -28,11 +28,11 @@ class NetworkManager{
     }
     
     init(){
-        if let bundleIdentifier = Bundle.main.bundleIdentifier{
-            backgroundManager = Alamofire.SessionManager(session: URLSession(configuration: URLSessionConfiguration.background(withIdentifier: bundleIdentifier+".background")), delegate: Alamofire.SessionManager.default.delegate)!
-        } else {
+//        if let bundleIdentifier = Bundle.main.bundleIdentifier {
+//            backgroundManager = Alamofire.SessionManager(session: URLSession(configuration: URLSessionConfiguration.background(withIdentifier: bundleIdentifier+".background")), delegate: Alamofire.SessionManager.default.delegate)!
+//        } else {
             backgroundManager = Alamofire.SessionManager.default
-        }
+        //}
         self.alamofireTest()
     }
     

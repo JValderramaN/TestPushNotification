@@ -16,6 +16,10 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self, selector: #selector(ViewController.getDetailFromUserDefaults), name: .onDidReceivedPushNotification, object: nil)
         getDetailFromUserDefaults()
+        let defaults = UserDefaults.standard
+        defaults.set(0, forKey: kAppBagde)
+
+        UIApplication.shared.applicationIconBadgeNumber = 0
     }
     
     deinit {
